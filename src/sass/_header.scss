@@ -1,0 +1,10 @@
+.header {
+    &__links {
+        display: inline-block;
+
+        @media screen and (max-width: $small-screen) {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
