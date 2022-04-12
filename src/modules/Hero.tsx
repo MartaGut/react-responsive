@@ -1,7 +1,6 @@
 
 import { useEffect, useState } from 'react';
 import heroImg from "./../img/hero-img.png";
-import BtnSlider from './../SliderBtn';
 
 import leftArrow from "./../img/home.svg";
 import rightArrow from "./../img/right-arrow.svg";
@@ -71,18 +70,18 @@ function Hero() {
         <div className="hero">
             <div className="container">
                 <div className="container-slider">
-                     {slides.map((obj, index) => {
-                return (
-                    <div
-                    key={obj.title}
-                    className={slideIndex === index + 1 ? "slide active-anim" : "slide"}
-                    >
-                        <img 
-                        src={obj.srcImg} 
-                        />
-                    </div>
-                )
-            })}
+                    {slides.map((obj, index) => {
+                        return (
+                            <div
+                                key={obj.title}
+                                className={slideIndex === index + 1 ? "slide active-anim" : "slide"}
+                            >
+                                <img
+                                    src={obj.srcImg}
+                                />
+                            </div>
+                        )
+                    })}
                 </div>
                 <button
                     onClick={prevSlide}
@@ -98,13 +97,13 @@ function Hero() {
                 </button>
 
                 <div className="container-dots">
-                {Array.from({length: 5}).map((item, index) => (
-                    <div 
-                    onClick={() => moveDot(index + 1)}
-                    className={slideIndex === index + 1 ? "dot active" : "dot"}
-                    ></div>
-                ))}
-            </div>
+                    {Array.from({ length: 5 }).map((item, index) => (
+                        <div
+                            onClick={() => moveDot(index + 1)}
+                            className={slideIndex === index + 1 ? "dot active" : "dot"}
+                        ></div>
+                    ))}
+                </div>
             </div>
         </div>
     );
