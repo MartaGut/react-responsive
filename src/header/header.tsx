@@ -71,18 +71,18 @@ function Header() {
     return (
         <header className="header">
             <div className="container">
-                <embed className="header__img" src={logoImg} alt="Logo" />
+                <embed className="header__img" src={logoImg} />
                 {/* <embed src={hamburger}></embed> */}
                 {(!isSmallScreen || isNavVisible) && (
                     <nav className="header__links">
                         {links.map(({ title, href, src }) => (
                             <a className="header__link" key={title} href={href}>{title}
-                                <embed className="header__img" src={src} alt="Logo" />
+                                <embed className="header__img" src={src}  />
                             </a>
                         ))}
                     </nav>
                 )}
-                <button type="button" onClick={toggleNav}><img className="header__img" src={hamburgerImg} alt="Logo" /></button>
+                <button type="button" onClick={toggleNav}><img className="header__img" src={hamburgerImg}  /></button>
 
             </div>
         </header>
