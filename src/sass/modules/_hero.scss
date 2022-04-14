@@ -38,15 +38,15 @@
  }
 
  &__title {
-   color: $color-dark-gray;
-   text-transform: uppercase;
-   font-size: 50px;
-   font-weight: 400;
-   max-width: 330px;
-   margin-left: 20px;
+  color: $color-dark-gray;
+  text-transform: uppercase;
+  font-size: 50px;
+  font-weight: 400;
+  max-width: 330px;
+  margin-left: 20px;
 
-   @media screen and (max-width: $tablet-screen) {
- font-size: 30px;
+  @media screen and (max-width: $tablet-screen) {
+   font-size: 30px;
   }
  }
 
@@ -57,7 +57,7 @@
   max-width: 170px;
   max-height: 170px;
   @media screen and (max-width: $tablet-screen) {
-    transform: scale(0.7);
+   transform: scale(0.7);
   }
  }
 
@@ -84,11 +84,11 @@
   pointer-events: none;
  }
 
- .next, 
+ .next,
  .prev {
-   display: none;
+  display: none;
  }
- 
+
  .prev {
   top: 50%;
   left: 20px;
@@ -109,8 +109,8 @@
   display: flex;
 
   @media screen and (max-width: $tablet-screen) {
-    margin-top: -7.2%;
-     }
+   margin-top: -7.2%;
+  }
  }
 
  .dot {

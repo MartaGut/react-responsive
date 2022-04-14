@@ -33,7 +33,7 @@ function WhoWeAre() {
                                 className="posts__item"
                             >
                                 <div className="posts__img-wrapper">
-                                <IcomoonReact className="posts__link-img" iconSet={iconSet} icon={obj.srcImg} />
+                                    <IcomoonReact className="posts__link-img" iconSet={iconSet} icon={obj.srcImg} />
                                 </div>
                                 <div className="posts__column">
                                     <h3 className="posts__item-title">{obj.title}</h3>

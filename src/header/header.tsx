@@ -82,7 +82,7 @@ function Header() {
                                         {(!isTabletScreen) &&
                                             <span className="header__link">{title}</span>
                                         }
-                                            {(isSmallScreen) &&
+                                        {(isSmallScreen) &&
                                             <span className="header__link">{title}</span>
                                         }
                                         {(!isSmallScreen && isTabletScreen) &&

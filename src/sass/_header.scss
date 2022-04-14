@@ -7,10 +7,10 @@
  }
 
  &__link-img {
-     margin: 0 10px;
-    path {
-        fill: $color-gray !important;
-    }
+  margin: 0 10px;
+  path {
+   fill: $color-gray !important;
+  }
  }
 
  &__img {
@@ -18,8 +18,8 @@
   margin-left: 20px;
 
   @media screen and (max-width: $tablet-screen) {
-    transform: scale(1);
-   }
+   transform: scale(1);
+  }
  }
 
  &__links {
@@ -28,11 +28,11 @@
   margin-left: 9%;
 
   @media screen and (max-width: $tablet-screen) {
-    height: 50px;
-    margin-top: -30px;
-    margin-left: 3%;
-    white-space: nowrap;
-   }
+   height: 50px;
+   margin-top: -30px;
+   margin-left: 3%;
+   white-space: nowrap;
+  }
 
   @media screen and (max-width: $small-screen) {
    display: flex;
@@ -57,19 +57,15 @@
     content: "";
    }
   }
-
-//   @media screen and (max-width: $tablet-screen) and (min-width: $small-screen) {
-//     display: none;
-//    }
  }
 
  &__link-img {
- color: $color-dark-gray;
- width: 30px;
+  color: $color-dark-gray;
+  width: 30px;
 
   @media screen and (max-width: $tablet-screen) {
-    display: none
-   }
+   display: none;
+  }
  }
 
  &__search-btn {
@@ -79,8 +75,8 @@
   margin-top: -6px;
 
   @media screen and (max-width: $tablet-screen) {
-    display: none
-   }
+   display: none;
+  }
  }
 
  &__search-icon {
@@ -99,8 +95,8 @@
  }
 
  &__hamburger-icon {
-     width: 20px;
-     height: 20px;
-    margin-top: -30px;
+  width: 20px;
+  height: 20px;
+  margin-top: -30px;
  }
 }
