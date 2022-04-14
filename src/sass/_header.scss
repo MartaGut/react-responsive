@@ -1,10 +1,106 @@
 .header {
-    &__links {
-        display: inline-block;
+ padding: 25px 0;
 
-        @media screen and (max-width: $small-screen) {
-            display: flex;
-            flex-direction: column;
-        }
+ > div {
+  display: flex;
+  justify-content: space-between;
+ }
+
+ &__link-img {
+     margin: 0 10px;
+    path {
+        fill: $color-gray !important;
     }
+ }
+
+ &__img {
+  transform: scale(1.2);
+  margin-left: 20px;
+
+  @media screen and (max-width: $tablet-screen) {
+    transform: scale(1);
+   }
+ }
+
+ &__links {
+  display: inline-block;
+  margin-top: 5px;
+  margin-left: 9%;
+
+  @media screen and (max-width: $tablet-screen) {
+    height: 50px;
+    margin-top: -30px;
+    margin-left: 3%;
+    white-space: nowrap;
+   }
+
+  @media screen and (max-width: $small-screen) {
+   display: flex;
+   flex-direction: column;
+  }
+ }
+
+ &__link {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1.1px;
+
+  &::after {
+   content: "/";
+   display: inline-block;
+   padding: 0 7px;
+  }
+
+  &:last-child {
+   &::after {
+    content: "";
+   }
+  }
+
+//   @media screen and (max-width: $tablet-screen) and (min-width: $small-screen) {
+//     display: none;
+//    }
+ }
+
+ &__link-img {
+ color: $color-dark-gray;
+ width: 30px;
+
+  @media screen and (max-width: $tablet-screen) {
+    display: none
+   }
+ }
+
+ &__search-btn {
+  background-color: transparent;
+  border: none;
+  display: inline-block;
+  margin-top: -6px;
+
+  @media screen and (max-width: $tablet-screen) {
+    display: none
+   }
+ }
+
+ &__search-icon {
+  width: 15px;
+  color: $color-gray;
+ }
+
+ &__hamburger-btn {
+  display: none;
+  background-color: transparent;
+  border: none;
+
+  @media (max-width: $small-screen) {
+   display: inline-block;
+  }
+ }
+
+ &__hamburger-icon {
+     width: 20px;
+     height: 20px;
+    margin-top: -30px;
+ }
 }

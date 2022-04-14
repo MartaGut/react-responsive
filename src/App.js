@@ -1,5 +1,7 @@
 
 // import './App.css';
+
+import Footer from './footer/Footer.tsx';
 import Header from './header/header.tsx';
 import Hero from './modules/Hero.tsx';
 import WhatWeDo from './modules/WhatWeDo.tsx';
@@ -16,6 +18,7 @@ function App() {
       <Hero />
       <WhoWeAre />
       <WhatWeDo />
+      <Footer />
     </div>
   );
 }

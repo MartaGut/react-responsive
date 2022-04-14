@@ -1,15 +1,6 @@
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import heroImg from "./../img/hero-img.png";
-
-import leftArrow from "./../img/home.svg";
-import rightArrow from "./../img/right-arrow.svg";
-
-interface HeroProps {
-    title: string,
-    srcImg: string
-    index?: any
-}
 
 function Hero() {
 
@@ -17,22 +8,17 @@ function Hero() {
 
     const slides = [
         {
-            title: "home",
+            title: "Lorem ipsum dolor sit",
             srcImg: hero
 
         },
         {
-            title: "about us",
+            title: "Lorem ipsum dolor sit",
             srcImg: hero
 
         },
         {
-            title: "our work",
-            srcImg: hero
-
-        },
-        {
-            title: "contact",
+            title: "Lorem ipsum dolor sit",
             srcImg: hero
 
         }
@@ -68,17 +54,19 @@ function Hero() {
 
     return (
         <div className="hero">
+            <div className="hero__gradient"></div>
             <div className="container">
-                <div className="container-slider">
+                <div className="hero__slider">
                     {slides.map((obj, index) => {
                         return (
                             <div
-                                key={obj.title}
+                                key={index}
                                 className={slideIndex === index + 1 ? "slide active-anim" : "slide"}
                             >
                                 <img
                                     src={obj.srcImg}
                                 />
+                                <h1 className="hero__title">{obj.title}</h1>
                             </div>
                         )
                     })}
@@ -87,17 +75,15 @@ function Hero() {
                     onClick={prevSlide}
                     className="btn-slide prev"
                 >
-                    <img src={leftArrow} />
                 </button>
                 <button
                     onClick={nextSlide}
                     className="btn-slide next"
                 >
-                    <img src={rightArrow} />
                 </button>
 
                 <div className="container-dots">
-                    {Array.from({ length: 5 }).map((item, index) => (
+                    {Array.from({ length: 3 }).map((item, index) => (
                         <div
                             onClick={() => moveDot(index + 1)}
                             className={slideIndex === index + 1 ? "dot active" : "dot"}

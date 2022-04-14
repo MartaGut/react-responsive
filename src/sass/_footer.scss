@@ -1,0 +1,56 @@
+.footer {
+    background-color: $color-background-gray;
+    margin-top: 35px;
+    padding: 10px;
+
+    > div {
+        display: flex;
+        position: relative;
+    }
+
+    &__social {
+        display: flex;
+    }
+
+    &__link-copy {
+        color: $color-dark-gray;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 6px;
+    }
+
+    &__links {
+        margin-top: 10px;
+        margin-left: 20px;
+
+        @media screen and (max-width: $tablet-screen) {
+            display: none;
+           }
+    }
+
+    &__link {
+        width: 25px;
+        height: 25px;
+        margin: 0 13px;
+        background-color: $color-white;
+        padding: 5px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__button {
+        border: none;
+        background-color: $color-white;
+        padding: 10px 15px;
+        border-radius: 50%;
+        position: absolute;
+        right: 30px;
+        top: -5px;
+        
+            .footer__link-img {
+                width: 10px;
+                color: $color-dark-gray;
+            }
+    }
+}

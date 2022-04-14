@@ -1,9 +1,12 @@
+@import "./sass/general/vars";
 @import "./sass/general/normalize";
 @import "./sass/general/globals";
-@import "./sass/general/vars";
 @import "./sass/general/grid";
 
 @import "./sass/header";
+@import "./sass/footer";
 
 // modules
 @import "./sass/modules/hero";
+@import "./sass/modules/who-we-are";
+@import "./sass/modules/what-we-do";

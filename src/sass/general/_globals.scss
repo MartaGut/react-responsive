@@ -1,0 +1,26 @@
+.h2 {
+    font-size: 27px;
+    color: $color-dark-gray;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    font-weight: 500;
+}
+
+a {
+    &:hover {
+        color: $color-green;
+
+        path {
+            fill: $color-green !important;  
+        }
+    }
+    &:active {
+        color: $color-dark-green;
+    }
+    &:focus {
+        color: $color-marine;
+    }
+    &:visited {
+        color: $color-blue;
+    }
+}

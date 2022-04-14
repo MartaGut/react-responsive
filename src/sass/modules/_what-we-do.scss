@@ -1,0 +1,21 @@
+.posts.no-copy {
+ padding: 0;
+
+ .posts__items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+ }
+
+ .posts__img-wrapper {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-background-gray;
+  width: 186px;
+  height: 111px;
+  margin-right: 44px;
+  margin: 0;
+ }
+}

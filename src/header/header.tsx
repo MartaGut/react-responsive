@@ -1,58 +1,51 @@
 
 import { useEffect, useState } from 'react';
-import hamburger from './../img/hamburger.svg';
 import logo from './../img/logo.svg';
-import hat from './../img/hat.svg';
-import home from './../img/home.svg';
-import mail from './../img/mail.svg';
-import question from './../img/question.svg';
+import iconSet from "./../selection.json";
+import IcomoonReact from "icomoon-react";
 
 function Header() {
-
-    const logoImg = logo;
-    const hamburgerImg = hamburger;
-    const hatImg = hat;
-    const homeImg = home;
-    const mailImg = mail;
-    const questionImg = question;
 
     const links = [
         {
             title: "home",
             href: "#",
-            src: homeImg
+            src: "home"
         },
         {
             title: "about us",
             href: "#",
-            src: questionImg
+            src: "about"
         },
         {
             title: "our work",
             href: "#",
-            src: hatImg
+            src: "our-work"
         },
         {
             title: "contact",
             href: "#",
-            src: mailImg
+            src: "contact"
         }
     ]
-
 
     // toggle menu
 
     const [isNavVisible, setNavVisibility] = useState(false);
     const [isSmallScreen, setIsSmallScreen] = useState(false);
+    const [isTabletScreen, setIsTabletScreen] = useState(false);
 
     useEffect(() => {
         const mediaQuery = window.matchMedia("(max-width: 320px)");
+        const mediaQueryTablet = window.matchMedia("(max-width: 480px)");
         mediaQuery.addListener(handleMediaQueryChange);
+        mediaQueryTablet.addListener(handleMediaQueryChangeTablet);
         handleMediaQueryChange(mediaQuery);
+        handleMediaQueryChangeTablet(mediaQueryTablet);
 
         return () => {
             mediaQuery.removeListener(handleMediaQueryChange);
-            console.log("clicked")
+            mediaQueryTablet.removeListener(handleMediaQueryChangeTablet);
         };
     }, []);
 
@@ -64,6 +57,14 @@ function Header() {
         }
     };
 
+    const handleMediaQueryChangeTablet = mediaQueryTablet => {
+        if (mediaQueryTablet.matches) {
+            setIsTabletScreen(true);
+        } else {
+            setIsTabletScreen(false);
+        }
+    };
+
     const toggleNav = () => {
         setNavVisibility(!isNavVisible);
     };
@@ -71,18 +72,33 @@ function Header() {
     return (
         <header className="header">
             <div className="container">
-                <embed className="header__img" src={logoImg} />
-                {/* <embed src={hamburger}></embed> */}
+                <embed className="header__img" src={logo} />
                 {(!isSmallScreen || isNavVisible) && (
-                    <nav className="header__links">
-                        {links.map(({ title, href, src }) => (
-                            <a className="header__link" key={title} href={href}>{title}
-                                <embed className="header__img" src={src}  />
-                            </a>
-                        ))}
-                    </nav>
+                    <>
+                        <nav className="header__links">
+                            {links.map(({ title, href, src }) => (
+                                <>
+                                    <a className="header__link-icon" key={title} href={href}>
+                                        {(!isTabletScreen) &&
+                                            <span className="header__link">{title}</span>
+                                        }
+                                            {(isSmallScreen) &&
+                                            <span className="header__link">{title}</span>
+                                        }
+                                        {(!isSmallScreen && isTabletScreen) &&
+                                            <IcomoonReact className="header__link-img" iconSet={iconSet} color="#444" size={100} icon={src} />
+                                        }
+                                    </a>
+                                    {/* <a className="header__link" key={title} href={href}>
+                                        {title}
+                                    </a> */}
+                                </>
+                            ))}
+                        </nav>
+                        <button className="header__search-btn" type="button"><IcomoonReact className="header__search-icon" iconSet={iconSet} icon="search" /></button>
+                    </>
                 )}
-                <button type="button" onClick={toggleNav}><img className="header__img" src={hamburgerImg}  /></button>
+                <button className="header__hamburger-btn" type="button" onClick={toggleNav}><IcomoonReact className="header__hamburger-icon" iconSet={iconSet} color="#444" size={100} icon="burger" /></button>
 
             </div>
         </header>
